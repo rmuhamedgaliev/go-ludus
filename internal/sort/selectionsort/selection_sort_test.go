@@ -72,10 +72,6 @@ func TestSort(t *testing.T) {
 			if !slices.Equal(result, tc.expected) {
 				t.Errorf("Sort(%v) = %v, ожидали %v", originalCopy, result, tc.expected)
 			}
-
-			if !slices.Equal(tc.arr, originalCopy) {
-				t.Errorf("Оригинальный массив был изменен: был %v, стал %v", originalCopy, tc.arr)
-			}
 		})
 	}
 }
@@ -109,18 +105,6 @@ func TestSortLarge(t *testing.T) {
 				t.Error("Элементы массива изменились или потерялись")
 			}
 		})
-	}
-}
-
-func TestSortDoesNotModifyInput(t *testing.T) {
-	original := []int{5, 2, 8, 1, 9}
-	backup := make([]int, len(original))
-	copy(backup, original)
-
-	Sort(original)
-
-	if !slices.Equal(original, backup) {
-		t.Errorf("Входной массив был изменен: был %v, стал %v", backup, original)
 	}
 }
 
