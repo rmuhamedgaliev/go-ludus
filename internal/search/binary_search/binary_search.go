@@ -16,6 +16,5 @@ func Search(arr []int, number int) int {
 			left = mid + 1
 		}
 	}
-
 	return -1
 }

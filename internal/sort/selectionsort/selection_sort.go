@@ -1,9 +1,8 @@
 package selectionsort
 
 func Sort(arr []int) []int {
-	for index, _ := range arr {
+	for index := range arr {
 		smallestIndex := index
-
 		for j := index + 1; j < len(arr); j++ {
 			if arr[j] < arr[smallestIndex] {
 				smallestIndex = j
