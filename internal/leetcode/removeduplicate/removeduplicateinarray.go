@@ -1,9 +1,9 @@
 package removeduplicate
 
 func RemoveDuplicates(nums []int) int {
-	j := 0 // указатель для записи
+	j := 0
 	for i := 1; i < len(nums); i++ {
-		if nums[i] != nums[j] { // сравниваем с последним уникальным
+		if nums[i] != nums[j] {
 			j++
 			nums[j] = nums[i]
 		}
